@@ -1,65 +1,72 @@
+import Link from "next/link";
 import Image from "next/image";
+
+export const metadata = {
+  title: "Lavender SEO — Beautiful SEO Learning Website",
+  description: "Learn SEO step-by-step with a modern lavender design. Includes metadata, internal linking, canonical tags, and SEO content.",
+};
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container py-5">
+
+      {/* HERO */}
+      <section className="hero text-center">
+        <h1 className="fw-bold mb-3">Learn SEO Beautifully & Professionally</h1>
+        <p className="mb-4 fs-5">
+          A clean, modern, pastel-theme website carefully crafted for SEO perfection.
+        </p>
+        <Link href="/blog" className="btn btn-primary">Explore Articles</Link>
+      </section>
+
+      {/* ROADMAP */}
+      <section className="mt-5">
+        <h2 className="fw-bold mb-4">10-Day SEO Roadmap</h2>
+        <div className="row g-4">
+          {[
+            "Introduction to SEO",
+            "Search Intent & Keyword Types",
+            "Keyword Tools (GKP, Ahrefs, SEMrush)",
+            "Building Keyword Strategy",
+            "Practical Keyword Research",
+            "On-Page SEO Basics",
+            "Semantic HTML & Headers",
+            "Image SEO",
+            "Internal Linking & Canonical",
+            "On-Page SEO Practice",
+          ].map((item, i) => (
+            <div key={i} className="col-md-6">
+              <div className="card p-4">
+                <h5 className="fw-semibold">Day {i + 1}</h5>
+                <p className="text-muted mb-0">{item}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* BLOG PREVIEW */}
+      <section className="mt-5">
+        <h2 className="fw-bold mb-4">Latest SEO Articles</h2>
+        <div className="row g-4">
+          <div className="col-md-6">
+            <div className="card p-4">
+              <h4>Introduction to SEO</h4>
+              <p className="text-muted">Learn what SEO is and how search engines work.</p>
+              <Link href="/blog/introduction-to-seo" className="btn btn-outline">Read Article</Link>
+            </div>
+          </div>
+
+          <div className="col-md-6">
+            <div className="card p-4">
+              <h4>Keyword Research Guide</h4>
+              <p className="text-muted">Understand keyword intent, tools, and strategy.</p>
+              <Link href="/blog/keyword-research-guide" className="btn btn-outline">Read Article</Link>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
     </div>
   );
 }
