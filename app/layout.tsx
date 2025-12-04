@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 export const metadata = {
-  title: "Lavender SEO — Learn SEO Beautifully",
+  title: "Learn SEO",
   description: "A professional, modern SEO-focused website built with Next.js following perfect SEO rules.",
   metadataBase: new URL("http://localhost:3000"),
 };

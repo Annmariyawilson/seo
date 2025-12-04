@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Lavender SEO — Beautiful SEO Learning Website",
+  title: "SEO Learning Website",
   description: "Learn SEO step-by-step. Includes metadata, internal linking, canonical tags, and SEO content.",
 };
 
